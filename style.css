@@ -142,7 +142,6 @@ button:hover {
   transition: 0.4s;
 }
 
-/* Activado (modo oscuro) */
 input:checked+.slider {
   background-color: #444;
 }
