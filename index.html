@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>¡Tres en Raya!</title>
+  <link rel="stylesheet" href="style.css">
+  
+  <style>
+    .tablero {
+      display: grid;
+      grid-template-columns: repeat(3, 100px);
+      gap: 5px;
+      margin: 20px auto;
+    }
+  
+    .casilla {
+      width: 100px;
+      height: 100px;
+      background-color: beige;
+      border: 1px solid #ccc;
+    }
+  </style>
+
+
+</head>
+
+<body>
+  <div class="juego">
+    <h1>¡Juguemos Tres en Raya!</h1>
+
+    <div class="tablero">
+      <!-- 9 casillas del juego -->
+      <div class="casilla" data-index="0"></div>
+      <div class="casilla" data-index="1"></div>
+      <div class="casilla" data-index="2"></div>
+      <div class="casilla" data-index="3"></div>
+      <div class="casilla" data-index="4"></div>
+      <div class="casilla" data-index="5"></div>
+      <div class="casilla" data-index="6"></div>
+      <div class="casilla" data-index="7"></div>
+      <div class="casilla" data-index="8"></div>
+    </div>
+
+
+    <div class="estado" id="estado">Turno de: X</div>
+    <div class="contador">
+      <p><strong>X:</strong> <span id="contador-x">0</span> victorias</p>
+      <p><strong>O:</strong> <span id="contador-o">0</span> victorias</p>
+    </div>
+
+    <button id="reiniciar-contadores">Reiniciar contadores</button>
+
+
+
+    <button id="reiniciar">Reiniciar</button>
+
+    <div class="modo-contenedor">
+      <p class="modo-texto">Cambia entre modo claro y oscuro</p>
+      <label class="switch">
+        <input type="checkbox" id="modo-toggle">
+        <span class="slider"></span>
+      </label>
+    </div>
+
+
+  </div>
+
+  <script src="script.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+
+
+</body>
+
+</html>
