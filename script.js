@@ -5,9 +5,9 @@ const contadorX = document.getElementById("contador-x");
 const contadorO = document.getElementById("contador-o");
 
 // Sonidos
-const sonidoClick = new Audio("sonidos/click.mp3");
-const sonidoWin = new Audio("sonidos/win.mp3");
-const sonidoEmpate = new Audio("sonidos/draw.mp3");
+const sonidoClick = new Audio ;("sonidos/Click.ogg")
+const sonidoWin = new Audio("sonidos/Win.ogg");
+const sonidoEmpate = new Audio("sonidos/draw.ogg");
 
 const casillas = document.querySelectorAll(".casilla");
 const estado = document.getElementById("estado");
@@ -61,7 +61,7 @@ casillas.forEach(casilla => {
       } else if (!tablero.includes("")) {
         estado.textContent = "¡Empate! 😐";
         sonidoEmpate.play();
-        
+
 
 				juegoActivo = false;
 			} else {
