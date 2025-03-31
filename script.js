@@ -5,7 +5,7 @@ const contadorX = document.getElementById("contador-x");
 const contadorO = document.getElementById("contador-o");
 
 // Sonidos
-const sonidoClick = new Audio ;("./sonidos/Click.ogg")
+const sonidoClick = new Audio("./sonidos/Click.ogg");
 const sonidoWin = new Audio("./sonidos/Win.ogg");
 const sonidoEmpate = new Audio("./sonidos/draw.ogg");
 
@@ -37,35 +37,33 @@ casillas.forEach(casilla => {
 			casilla.classList.add("marcada");
 			sonidoClick.play();
 
-      if (verificarGanador()) {
-        estado.textContent = `¡Ganó ${turno}! 🎉`;
-        sonidoWin.play();
-        lanzarConfeti();
-        if (verificarGanador()) {
-          estado.textContent = `¡Ganó ${turno}! 🎉`;
-          sonidoWin.play();
-          juegoActivo = false;
+			if (verificarGanador()) {
+				estado.textContent = `¡Ganó ${turno}! 🎉`;
+				sonidoWin.play();
+				lanzarConfeti();
+				if (verificarGanador()) {
+					estado.textContent = `¡Ganó ${turno}! 🎉`;
+					sonidoWin.play();
+					juegoActivo = false;
 
-          // Actualizar contador
-          if (turno === "X") {
-            victoriasX++;
-            contadorX.textContent = victoriasX;
-          } else {
-            victoriasO++;
-            contadorO.textContent = victoriasO;
-          }
-        }
+					// Actualizar contador
+					if (turno === "X") {
+						victoriasX++;
+						contadorX.textContent = victoriasX;
+					} else {
+						victoriasO++;
+						contadorO.textContent = victoriasO;
+					}
+				}
 
-
-        juegoActivo = false;
-      } else if (!tablero.includes("")) {
-        estado.textContent = "¡Empate! 😐";
-        sonidoEmpate.play();
-
+				juegoActivo = false;
+			} else if (!tablero.includes("")) {
+				estado.textContent = "¡Empate! 😐";
+				sonidoEmpate.play();
 
 				juegoActivo = false;
 			} else {
-					turno = turno === "X" ? "O" : "X";
+				turno = turno === "X" ? "O" : "X";
 				estado.textContent = `Turno de: ${turno}`;
 			}
 		}
@@ -104,15 +102,14 @@ function lanzarConfeti() {
 }
 
 // BOTÓN para reiniciar contadores
-const btnReiniciarContadores = document.getElementById('reiniciar-contadores');
+const btnReiniciarContadores = document.getElementById("reiniciar-contadores");
 
-btnReiniciarContadores.addEventListener('click', () => {
-  victoriasX = 0;
-  victoriasO = 0;
-  contadorX.textContent = "0";
-  contadorO.textContent = "0";
+btnReiniciarContadores.addEventListener("click", () => {
+	victoriasX = 0;
+	victoriasO = 0;
+	contadorX.textContent = "0";
+	contadorO.textContent = "0";
 
-  // Actualizar el mensaje de turno
-  estado.textContent = `Turno de: ${turno}`;
-
+	// Actualizar el mensaje de turno
+	estado.textContent = `Turno de: ${turno}`;
 });
